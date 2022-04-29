@@ -78,7 +78,6 @@ while not done:
 
     if ball.x >= 790:
         score = score + 1
-        print("Score:", score, "to", score1)
         xb = 0
         yb = 0
         lr = spd
@@ -88,7 +87,6 @@ while not done:
         pygame.time.delay(2000)
     if ball.x <= 0:
         score1 = score1 + 1
-        print("Score:", score, "to", score1)
         xb = 0
         yb = 0
         lr = -spd
@@ -96,6 +94,13 @@ while not done:
         y1 = 150
         yr = 0
         pygame.time.delay(2000)
+
+    font = pygame.font.SysFont('Calibri', 50, True, False)
+    text = font.render(str(score), True, white)
+    screen.blit(text, (350, 10))
+    font = pygame.font.SysFont('Calibri', 50, True, False)
+    text = font.render(str(score1), True, white)
+    screen.blit(text, (450, 10))
 
     pygame.display.flip()
     clock.tick(60)
